@@ -61,21 +61,21 @@ The four main views are described below.
 
 [Home](#home) | [Tables](#tables) | [Create Table](#createtable) | [Records](#records)
 
-##### Home 
+##### Home
 
 This is the first view you will encounter after clicking the DB link in the navbar.
 On the left side of the page, there is a collapsable navigation menu that allows you to
-select a database to work with. 
+select a database to work with.
 
 ![Image of create DB](https://i.gyazo.com/349fae70f00b8099a0d151424bd9b107.gif)
 
-At the top of the page there is an action bar that contains two buttons. One allows you to add a new database and another to remove an existing database. The 'add DB' button brings up a modal that prompts you for the name of the database that you would like to create. Once you hit create, the new database will be created and will show up on the left navigation menu. The 'remove DB' button brings up a modal with a list of all databases currently contained in your MySQL server. Select the database you would like to remove and hit delete. This will remove the database both from your MySQL server and the left navigation menu. Below the action bar there is a table containing your servers performance timers. Check out the [MySQL Documentation](https://dev.mysql.com/doc/refman/5.6/en/performance-timers-table.html) for more information about performance timers. 
+At the top of the page there is an action bar that contains two buttons. One allows you to add a new database and another to remove an existing database. The 'add DB' button brings up a modal that prompts you for the name of the database that you would like to create. Once you hit create, the new database will be created and will show up on the left navigation menu. The 'remove DB' button brings up a modal with a list of all databases currently contained in your MySQL server. Select the database you would like to remove and hit delete. This will remove the database both from your MySQL server and the left navigation menu. Below the action bar there is a table containing your servers performance timers. Check out the [MySQL Documentation](https://dev.mysql.com/doc/refman/5.6/en/performance-timers-table.html) for more information about performance timers.
 
 Lastly, there is a table containing the list of active processes on your database in real-time. From this view you are able to see the ID of the process, the user executing the process, the database in which the process was executed, the time (in seconds) that the process took (or is currently taking), the state of the process and any other info (e.g. the SQL query that was performed).
 
 ##### Tables
 
-By clicking on one of the databases on the left navigation menu, the Tables view will render and a list of all tables in that database will be displayed. 
+By clicking on one of the databases on the left navigation menu, the Tables view will render and a list of all tables in that database will be displayed.
 
 There are four possible actions to take on this page. First, there is a search field on the left that will filter the list of tables as input is entered. Next to the search field, is the create table button which will redirect to the create table view. This view is described in the Create Table view section below. Below the action bar, the table containing the list of tables in the database has two columns. Click on the table name to go to the records view for that particular table. This view is described below in the Records view section. Finally, next to each table name there is a delete table button. Clicking on this button brings up a modal, with a prompt to either delete the table or cancel this action.
 
@@ -83,11 +83,11 @@ There are four possible actions to take on this page. First, there is a search f
 
 ![Image of create DB](https://i.gyazo.com/4ce37161aba22836e1b228b2e0c92b5f.gif)
 
-This view allows for the creation of a table in the currently selected database. The action bar at the top of the page has two fields. Enter the name of the table to be created in the input box on the left. This field is required. The input box on the right side of the action bar is for adding fields to the table. Click 'add field' to add one field at a time, or to add several fields at once, click the green plus button to increase the amount of fields to be added, then click 'add field'. Each field has a name, type, length/values, default value, null, index, and auto increment column. For more information on these options, reference the MySQL documentation for creating tables [here](https://dev.mysql.com/doc/refman/5.7/en/create-table.html). 
+This view allows for the creation of a table in the currently selected database. The action bar at the top of the page has two fields. Enter the name of the table to be created in the input box on the left. This field is required. The input box on the right side of the action bar is for adding fields to the table. Click 'add field' to add one field at a time, or to add several fields at once, click the green plus button to increase the amount of fields to be added, then click 'add field'. Each field has a name, type, length/values, default value, null, index, and auto increment column. For more information on these options, reference the MySQL documentation for creating tables [here](https://dev.mysql.com/doc/refman/5.7/en/create-table.html).
 
 Once all fields are filled out, clicking the 'create' button will create the table (or give an error if the table could not be created) and then redirect to the previous table's view.
 
-##### Records 
+##### Records
 
 ![Image of records view](https://i.gyazo.com/79ce60d1e1c33c1145e1d7313196b8cf.gif)
 
@@ -117,7 +117,7 @@ Direct Queries provides the ability to execute raw SQL queries directly from Nod
 
 ![Image of users](https://i.gyazo.com/3c7e330e653a6a51aa603149518ce93c.gif)
 
-The main function of the Settings view is for the management of MySQL users. At the top of the view, the action bar contains a search field for filtering users, and an 'add user' button. The 'add user' button brings up a modal with inputs for a user name, password, and host name. At the bottom of the modal, there are three buttons: save, save and edit privileges, and cancel. Hitting the 'save' button creates a new user with the credentials provided above and grants that user all privileges. Clicking the 'save and edit privileges' button creates the user with the credentials provided above, granting that user all privileges, and then redirects to the edit privileges page for the newly created user. The Edit Privileges view is described below in the Edit Privileges View section. 
+The main function of the Settings view is for the management of MySQL users. At the top of the view, the action bar contains a search field for filtering users, and an 'add user' button. The 'add user' button brings up a modal with inputs for a user name, password, and host name. At the bottom of the modal, there are three buttons: save, save and edit privileges, and cancel. Hitting the 'save' button creates a new user with the credentials provided above and grants that user all privileges. Clicking the 'save and edit privileges' button creates the user with the credentials provided above, granting that user all privileges, and then redirects to the edit privileges page for the newly created user. The Edit Privileges view is described below in the Edit Privileges View section.
 
 Under the action bar is a table containing all users for the MySQL server, the host the user belongs to, and an action column containing a 'view privileges' and 'delete user' button. The 'view privileges' button brings up a modal which lists the privileges for that user and the option to go to the edit privileges page or close the modal. The 'delete user' button brings up a modal with a prompt to either delete the user or cancel the action.
 
@@ -125,12 +125,18 @@ Under the action bar is a table containing all users for the MySQL server, the h
 
 ![Image of privileges](https://i.gyazo.com/95c762e6fe2e2054596bd2fbbe35e05d.gif)
 
-This view provides a interface for editing the privileges for a specific user. There are several options, and it is recommended to understand all options before proceeding. A table describing the different privileges a user can have has been provided at the bottom of the page. There are two buttons near the top of the Edit Privileges view that allow for the blanket granting or revoking of all privileges. Again, it is recommended that you have a good understanding of how MySQL users work. Check out the MySQL documentation [here](https://dev.mysql.com/doc/refman/5.6/en/user-account-management.html) for more information. 
+This view provides a interface for editing the privileges for a specific user. There are several options, and it is recommended to understand all options before proceeding. A table describing the different privileges a user can have has been provided at the bottom of the page. There are two buttons near the top of the Edit Privileges view that allow for the blanket granting or revoking of all privileges. Again, it is recommended that you have a good understanding of how MySQL users work. Check out the MySQL documentation [here](https://dev.mysql.com/doc/refman/5.6/en/user-account-management.html) for more information.
 
 Editing specific privileges for a user is accomplished by double-clicking a table cell in the privileges table. Doing this triggers the edit mode for that cell. A 'Y' or 'N' value can be entered, any other input is invalid and will return an error. Once the cell has been edited, click the save button to save the changes, or hit the cancel button to discard the changes.
 
 
 ## Development
+
+### Startup
+```
+node app.js
+open http://localhost:3000/nodeadmin/
+```
 
 ### Testing
 

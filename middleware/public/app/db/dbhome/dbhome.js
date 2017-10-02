@@ -3,7 +3,7 @@ angular.module('nodeadmin.db.dbhome', [])
   function ($scope, DBInfoFactory, $uibModal, $state, AlertCenter) {
 
     $scope.animationsEnabled = true;
-    
+
     AlertCenter.addAll($scope);
 
     $scope.open = function(type) {
@@ -59,8 +59,8 @@ angular.module('nodeadmin.db.dbhome', [])
     var trackPerformance = function () {
       DBInfoFactory.getPerformanceTimers()
       .then(function (data) {
-        var perfData = data;
-        $scope.perfHeaders = Object.keys(perfData[0]);
+        var perfData = data || [];
+        $scope.perfHeaders = Object.keys(perfData[0] || {});
         $scope.perfRows = perfData;
       });
     };
@@ -69,11 +69,11 @@ angular.module('nodeadmin.db.dbhome', [])
     var trackInfo = function () {
       DBInfoFactory.getInfo()
       .then(function (data) {
-        var infoData = data;
+        var infoData = data || [];
         for (var i = 0; i < infoData.length; i++) {
           delete infoData[i]['HOST'];
         }
-        $scope.infoHeaders = Object.keys(infoData[0]);
+        $scope.infoHeaders = Object.keys(infoData[0] || {});
         $scope.infoRows = infoData;
       });
     };

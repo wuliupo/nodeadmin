@@ -5,7 +5,7 @@ var jwt = require('jsonwebtoken');
 module.exports = {
 
   login: function (req, res) {
-    var hostComponents = req.body.mysqlHost.split(':');
+    var hostComponents = (req.body.mysqlHost || '').split(':');
     mysql.createConnection({
       user: req.body.mysqlUser,
       password: req.body.mysqlPassword,
@@ -16,7 +16,7 @@ module.exports = {
         var token = jwt.sign({msg: 'welcome!'}, req.app.locals.secret);
         //Enables performance_schema if it was disabled\\
         conn.query(
-          "update performance_schema.setup_consumers set enabled='YES' where name='events_waits_current';", 
+          "update performance_schema.setup_consumers set enabled='YES' where name='events_waits_current';",
           function (err, rows, fields) {
           }
         );
@@ -31,7 +31,7 @@ module.exports = {
         res.status(500).json({error: 'something broke.'});
       }
     });
-      
+
   },
 
   logout: function(req, res) {

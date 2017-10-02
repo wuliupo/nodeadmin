@@ -19,7 +19,7 @@
     "angular-toarrayfilter": "^1.0.1",
     "angular-ui-bootstrap": "^0.14.3",
     "angular-ui-codemirror": "^0.3.0",
-    "angular-ui-router": "^0.2.15",
+    "angular-ui-router": "^1.0.3",
     "bootstrap": "^3.3.5",
     "chart.js": "^1.0.2",
     "codemirror": "^5.8.0",
